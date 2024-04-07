@@ -1,6 +1,5 @@
 services:
   mysql:
-    hostname: my-db
     image: mysql
     container_name: mysql_container
     restart: always
@@ -12,6 +11,12 @@ services:
 #    platform: linux/arm64, linux/amd64
     volumes:
       - my-sql-volume:/var/lib/mysql
+  redis:
+    image: redis
+    container_name: redis_container
+    restart: always
+    ports:
+      - 6379:6379
 volumes:
   my-sql-volume:
     name: volume-mysql
