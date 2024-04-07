@@ -3,6 +3,7 @@ package com.boki.stock.service;
 import com.boki.stock.domain.Stock;
 import com.boki.stock.repository.StockRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -14,7 +15,7 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    // @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public synchronized void decrease(Long id, Long quantity) {
         // Stock 조회
         // 재고 감소

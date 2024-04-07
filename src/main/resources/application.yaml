@@ -9,7 +9,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/stock_example
     username: root
     password: 1234
-#    password: rootroot
+    hikari:
+      maximum-pool-size: 40
 
 # docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 --name mysql mysql
 
