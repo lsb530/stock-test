@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: stock
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/stock_example
+    username: root
+    password: 1234
+#    password: rootroot
+
+# docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 --name mysql mysql
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
